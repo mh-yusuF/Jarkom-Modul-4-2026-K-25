@@ -6,7 +6,7 @@
 | Muhammad Yusuf | 5027251067 |
 | Azhari Rahma Putri | 5027251114 |
 
-## Laporan
+## Laporan CPT-VLSM
 
 ## 1.1 Pendahuluan
 
@@ -756,11 +756,15 @@ Hasil pembagian subnet kemudian diterapkan pada topologi menggunakan Cisco Packe
 Protokol OSPF digunakan untuk mendistribusikan informasi routing antarrouter. Berdasarkan pemeriksaan tabel routing dan pengujian ping dari JJ menuju Karl, komunikasi antarjaringan internal berhasil dilakukan tanpa packet loss.
 
 Dengan demikian, implementasi subnetting VLSM dan routing OSPF pada jaringan internal telah berhasil dilakukan. Adapun koneksi menuju Cloud/NAT masih memerlukan konfigurasi dan pengujian lanjutan.
-# Pembuktian Pengujian Jaringan Modul 4 (GNS3 - CIDR)
+
+## Laporan GNS3-CIDR
+
+## Pembuktian Pengujian Jaringan Modul 4 (GNS3 - CIDR)
 
 Laporan ini berisi rincian topologi jaringan serta pembuktian pengujian konektivitas (*ping*) antar-subnet dari node **Kari** ke berbagai entitas di seluruh jaringan **The Wired** menggunakan metode pengalokasian IP **CIDR (Classless Inter-Domain Routing)**.
 
 ---
+
 
 ## 1. Topologi Jaringan (`1_topologi.png`)
 
