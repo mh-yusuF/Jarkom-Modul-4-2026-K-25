@@ -8,23 +8,12 @@
 
 ## Laporan CPT-VLSM
 
-## 1.1 Pendahuluan
+## Pendahuluan
 
-Pada praktikum ini dilakukan perancangan jaringan komputer menggunakan metode subnetting Variable Length Subnet Mask (VLSM). Metode VLSM digunakan untuk membagi satu blok alamat IP menjadi beberapa subnet dengan ukuran yang berbeda sesuai kebutuhan jumlah host pada setiap jaringan.
+Praktikum ini berfokus pada perancangan jaringan komputer berdasarkan topologi yang telah ditentukan dalam soal. Proses perancangan dilakukan dengan menerapkan metode subnetting Variable Length Subnet Mask (VLSM) untuk membagi satu blok alamat IP menjadi beberapa subnet dengan ukuran berbeda.
 
-Perancangan jaringan dilakukan berdasarkan topologi yang telah ditentukan dalam soal praktikum. Setiap node memiliki kebutuhan host yang berbeda sehingga diperlukan pembagian alamat IP yang efisien agar penggunaan alamat tidak berlebihan.
-
-Blok alamat IP yang digunakan dalam praktikum ini adalah **10.76.0.0/19**. Pembagian subnet dilakukan berdasarkan jumlah host pada setiap node dan kebutuhan alamat IP untuk koneksi antarrouter.
-
-## 1.2 Tujuan Praktikum
-
-1. Memahami konsep subnetting menggunakan metode VLSM.
-2. Menghitung kebutuhan alamat IP berdasarkan jumlah host pada setiap jaringan.
-3. Membagi satu blok jaringan menjadi beberapa subnet dengan prefix yang berbeda.
-4. Menentukan network address, subnet mask, rentang IP host, dan broadcast address.
-5. Menyusun perencanaan pengalamatan IP sebagai dasar pembuatan topologi dan konfigurasi perangkat jaringan.
-
-## 1.3 Informasi Jaringan
+Langkah ini bertujuan agar alokasi alamat IP dapat disesuaikan secara efisien dengan jumlah host pada setiap node serta kebutuhan koneksi antarrouter tanpa adanya pemborosan. Blok alamat IP utama yang digunakan sebagai dasar perhitungan dalam praktikum ini adalah 10.76.0.0/19.
+## Informasi Jaringan
 
 Blok alamat IP yang diberikan untuk praktikum adalah:
 
@@ -39,7 +28,7 @@ Blok alamat IP yang diberikan untuk praktikum adalah:
 
 Blok jaringan /19 memiliki kapasitas 8.192 alamat IP. Alamat tersebut kemudian dibagi menjadi beberapa subnet sesuai kebutuhan host pada topologi.
 
-## 1.4 Identifikasi Kebutuhan Host
+## Identifikasi Kebutuhan Host
 
 Sebelum melakukan perhitungan VLSM, terlebih dahulu dilakukan identifikasi kebutuhan host pada setiap node. Kebutuhan host mencakup perangkat akhir dan interface router yang berada dalam subnet tersebut.
 
@@ -74,9 +63,11 @@ Berikut merupakan kebutuhan host berdasarkan topologi praktikum:
 | A25 | Shibuya – Switch13 – Lain dan Mika | 62 |
 | **Total** | | **2.814** |
 
+![alt text](assets/tabel-route.png)
+
 Kebutuhan host pada setiap subnet menjadi dasar dalam menentukan prefix dan subnet mask yang sesuai. Untuk jaringan yang menghubungkan dua router secara langsung, dibutuhkan dua alamat IP yang dapat digunakan, yaitu satu untuk masing-masing interface router.
 
-## 1.5 Dasar Perhitungan VLSM
+## Dasar Perhitungan VLSM
 
 Metode VLSM dilakukan dengan membagi jaringan berdasarkan kebutuhan host, dimulai dari kebutuhan host terbesar hingga terkecil.
 
@@ -126,7 +117,7 @@ Kapasitas alamat:
 
 Dengan kapasitas tersebut, subnet A4 dapat memenuhi kebutuhan host yang ditentukan.
 
-## 1.6 Hasil Pembagian Subnet VLSM
+## Hasil Pembagian Subnet VLSM
 
 Setelah seluruh kebutuhan host diurutkan dari yang terbesar hingga terkecil, dilakukan alokasi alamat IP secara berurutan dari blok jaringan 10.76.0.0/19.
 
@@ -160,7 +151,7 @@ Hasil pembagian subnet adalah sebagai berikut:
 | A22 | 2 | /30 | 255.255.255.252 |
 | A24 | 2 | /30 | 255.255.255.252 |
 
-## 1.7 Tabel Pembagian Alamat IP VLSM
+## Tabel Pembagian Alamat IP VLSM
 
 Berikut merupakan hasil alokasi alamat IP untuk setiap subnet berdasarkan perhitungan VLSM:
 
@@ -192,7 +183,11 @@ Berikut merupakan hasil alokasi alamat IP untuk setiap subnet berdasarkan perhit
 | A22 | 10.76.16.84/30 | 10.76.16.85 – 10.76.16.86 | 10.76.16.87 |
 | A24 | 10.76.16.88/30 | 10.76.16.89 – 10.76.16.90 | 10.76.16.91 |
 
-## 1.8 Analisis Hasil Pembagian Subnet
+Pembagian di file `K25_Modul_4_CIDR_VLSM.xlsx`
+
+![alt text](assets/pembagian-vlsm.png)
+
+## Hasil Pembagian Subnet
 
 Berdasarkan hasil perhitungan, blok alamat 10.76.0.0/19 berhasil dibagi menjadi 25 subnet dengan prefix yang bervariasi, mulai dari /22 hingga /30.
 
@@ -208,8 +203,6 @@ Dengan demikian, hasil perhitungan VLSM ini dapat digunakan sebagai dasar dalam 
 
 Setelah melakukan perhitungan subnetting menggunakan metode VLSM, tahap selanjutnya adalah membuat topologi jaringan berdasarkan rancangan yang telah ditentukan dalam soal praktikum.
 
-Topologi dibuat menggunakan aplikasi Cisco Packet Tracer dengan menghubungkan beberapa router, switch, dan end device. Setiap router berfungsi untuk menghubungkan jaringan yang berbeda, sedangkan switch digunakan untuk menghubungkan beberapa perangkat dalam satu jaringan lokal (LAN).
-
 Dalam topologi ini, router Cyberia menjadi pusat koneksi menuju Cloud-PT. Router Wired berperan sebagai penghubung utama antara Cyberia dan beberapa router lainnya. Selanjutnya, jaringan didistribusikan melalui router-router lain sesuai jalur yang telah ditentukan pada topologi.
 
 ## 2.2 Perangkat yang Digunakan
@@ -220,9 +213,9 @@ Perangkat yang digunakan dalam pembuatan topologi jaringan adalah sebagai beriku
 |---|---|---:|---|
 | 1 | Router Cisco 2811 | 13 | Menghubungkan subnet dan meneruskan paket data antarjaringan. |
 | 2 | Switch-PT | 13 | Menghubungkan beberapa end device atau router dalam satu segmen jaringan. |
-| 3 | PC-PT | Sesuai topologi | Mewakili perangkat komputer pengguna dalam jaringan. |
-| 4 | Laptop-PT | Sesuai topologi | Mewakili perangkat laptop pengguna dalam jaringan. |
-| 5 | Server-PT | 2 | Mewakili server pada jaringan yang terhubung ke router Psyche. |
+| 3 | PC-PT | 10 | Mewakili perangkat komputer pengguna dalam jaringan. |
+| 4 | Laptop-PT | 9 | Mewakili perangkat laptop pengguna dalam jaringan. |
+| 5 | Server-PT | 5 | Mewakili server pada jaringan yang terhubung ke router Psyche. |
 | 6 | Cloud-PT | 1 | Mewakili koneksi jaringan eksternal atau NAT/Cloud. |
 
 Jumlah router sebanyak 13 unit terdiri atas Cyberia, Wired, Psyche, Copland, Schumann, Accela, Navi, Tachibana, Deus, Protocol7, Knights, Phantoma, dan Shibuya.
@@ -241,7 +234,7 @@ Penambahan modul dilakukan melalui tab Physical pada perangkat router dengan mem
 
 Modul tambahan yang digunakan disesuaikan dengan kebutuhan interface FastEthernet pada masing-masing router. Jenis dan jumlah modul mengikuti slot serta interface yang benar-benar digunakan pada file Cisco Packet Tracer.
 
-## 2.4 Daftar Router dan Hubungan Antarjaringan
+## Daftar Router dan Hubungan Antarjaringan
 
 Berikut merupakan daftar router yang digunakan beserta jaringan yang terhubung pada masing-masing router:
 
@@ -261,39 +254,7 @@ Berikut merupakan daftar router yang digunakan beserta jaringan yang terhubung p
 | 12 | Phantoma | LAN A23, koneksi A22 menuju Knights, dan A24 menuju Shibuya. |
 | 13 | Shibuya | LAN A25 dan koneksi A24 menuju Phantoma. |
 
-## 2.5 Hubungan Switch dan End Device
-
-Switch digunakan sebagai penghubung perangkat dalam satu jaringan lokal. Setiap switch dihubungkan ke interface router yang berfungsi sebagai gateway bagi perangkat-perangkat pada jaringan tersebut.
-
-Hubungan switch dengan end device berdasarkan pembagian subnet adalah sebagai berikut:
-
-| Subnet | Router | Switch | End Device |
-|---|---|---|---|
-| A1 | Cyberia | Switch1 | JJ dan MyuMyu |
-| A3 | Wired | Switch2 | Psyche, Copland, dan Schumann |
-| A4 | Psyche | Switch6 | Karl dan Lin |
-| A5 | Copland | Switch sesuai topologi | Masayuki |
-| A9 | Accela | Switch8 | Omnipresence dan Denpa |
-| A11 | Navi | Switch4 | Alice dan Reika |
-| A12 | Navi | Switch3 | Taro |
-| A13 | Navi | Switch2 | Yasuo, Miho, dan Kuma |
-| A15 | Tachibana | Switch9 | Collective dan Ghost |
-| A17 | Deus | Switch10 | Lilith dan Specter |
-| A19 | Protocol7 | Switch11 | Chisa dan Hodgeson |
-| A23 | Phantoma | Switch12 | Semi |
-| A25 | Shibuya | Switch13 | Lain dan Mika |
-
-Selain jaringan yang menggunakan switch, terdapat beberapa koneksi langsung antara router dan end device, yaitu:
-
-| Subnet | Router | End Device |
-|---|---|---|
-| A6 | Copland | Juri |
-| A7 | Schumann | Akashic |
-| A21 | Knights | Eiri |
-
-**Catatan:** Penamaan switch pada tabel mengikuti identitas perangkat di topologi. Switch2 digunakan untuk jaringan A3 dan A13 apabila keduanya memang merupakan segmen yang terhubung ke switch yang sama pada rancangan aktual. Pastikan kembali label perangkat pada file Packet Tracer sebelum mengambil dokumentasi akhir.
-
-## 2.6 Proses Pembuatan Topologi di Cisco Packet Tracer
+## Proses Pembuatan Topologi di Cisco Packet Tracer
 
 Pembuatan topologi dilakukan melalui beberapa tahapan berikut:
 
@@ -309,7 +270,7 @@ Pembuatan topologi dilakukan melalui beberapa tahapan berikut:
 10. Menghubungkan router Cyberia ke Cloud-PT sebagai satu-satunya koneksi menuju NAT/Cloud.
 11. Merapikan posisi perangkat agar hubungan antarjaringan mudah dibaca.
 
-## 2.7 Jenis Kabel yang Digunakan
+## Jenis Kabel yang Digunakan
 
 Jenis kabel ditentukan berdasarkan perangkat yang dihubungkan.
 
@@ -322,7 +283,9 @@ Jenis kabel ditentukan berdasarkan perangkat yang dihubungkan.
 
 Pada praktikum ini, koneksi antarrouter menggunakan FastEthernet. Pemilihan jenis kabel disesuaikan dengan interface perangkat dan kondisi koneksi pada Cisco Packet Tracer.
 
-## 2.8 Hasil Pembuatan Topologi
+## Hasil Pembuatan Topologi
+
+![alt text](assets/topologi-vlsm.png)
 
 Setelah seluruh perangkat ditempatkan dan dihubungkan, terbentuk topologi jaringan yang terdiri atas 13 router, 13 switch, 25 node akhir, dan satu Cloud-PT.
 
@@ -332,9 +295,9 @@ Router Cyberia menjadi satu-satunya router yang dihubungkan ke Cloud-PT sesuai k
 
 Pada tahap ini, pembuatan topologi fisik telah dilakukan sebagai dasar untuk konfigurasi alamat IP, gateway, dan routing pada tahap berikutnya.
 
-## 3.1 Konfigurasi Alamat IP pada Router
+## Konfigurasi Alamat IP pada Router
 
-Setelah topologi jaringan selesai dibuat, tahap berikutnya adalah melakukan konfigurasi alamat IP pada setiap interface router. Konfigurasi dilakukan berdasarkan hasil pembagian subnet VLSM pada Bagian I.
+Setelah topologi jaringan selesai dibuat, tahap berikutnya adalah melakukan konfigurasi alamat IP pada setiap interface router. Konfigurasi dilakukan berdasarkan hasil pembagian subnet VLSM.
 
 Setiap interface router diberikan alamat IP sesuai subnet yang terhubung dengannya. Interface yang mengarah ke jaringan lokal berfungsi sebagai gateway bagi end device, sedangkan interface yang mengarah ke router lain digunakan untuk komunikasi antarjaringan.
 
@@ -348,7 +311,7 @@ Konfigurasi dilakukan melalui CLI Cisco Packet Tracer dengan tahapan umum sebaga
 6. Memasukkan alamat IP dan subnet mask.
 7. Mengaktifkan interface menggunakan perintah `no shutdown`.
 
-Contoh konfigurasi interface router:
+Konfigurasi interface router pada A2:
 
 ```cisco
 enable
@@ -361,7 +324,7 @@ exit
 
 Perintah tersebut merupakan contoh konfigurasi interface Wired pada subnet A2. Nama interface disesuaikan dengan port yang benar-benar digunakan pada topologi.
 
-## 3.2 Tabel Pengalamatan IP pada Router
+## Tabel Pengalamatan IP pada Router
 
 Berikut merupakan pembagian alamat IP untuk setiap interface router berdasarkan hasil VLSM.
 
@@ -407,13 +370,13 @@ Berikut merupakan pembagian alamat IP untuk setiap interface router berdasarkan 
 
 Alamat IP pada tabel tersebut merupakan alamat interface router yang digunakan sebagai gateway jaringan lokal maupun alamat pada koneksi antarrouter.
 
-## 3.3 Konfigurasi Alamat IP pada End Device
+## Konfigurasi Alamat IP pada End Device
 
 Setelah konfigurasi interface router dilakukan, tahap berikutnya adalah memberikan alamat IP pada setiap end device.
 
 Pengaturan dilakukan melalui menu:
 
-**Desktop → IP Configuration → Static**
+Desktop -> IP Configuration -> Static
 
 Setiap perangkat diberikan IP Address, Subnet Mask, dan Default Gateway sesuai subnet masing-masing.
 
@@ -449,7 +412,7 @@ Berikut tabel pengalamatan end device:
 
 Pengaturan alamat IP dilakukan secara manual agar setiap perangkat berada pada subnet yang sesuai dan dapat berkomunikasi melalui gateway masing-masing.
 
-## 3.4 Konfigurasi Routing OSPF
+## Konfigurasi Routing OSPF
 
 Setelah seluruh interface router dan end device mendapatkan alamat IP, tahap berikutnya adalah mengatur routing agar jaringan yang berbeda dapat saling berkomunikasi.
 
@@ -594,7 +557,9 @@ copy running-config startup-config
 
 Perintah tersebut digunakan untuk menyimpan konfigurasi aktif agar tetap tersedia ketika perangkat dinyalakan kembali.
 
-## 3.5 Pemeriksaan Routing OSPF
+![alt](assets/ospf.png)
+
+## Pemeriksaan Routing OSPF
 
 Setelah konfigurasi OSPF diterapkan pada seluruh router, dilakukan pemeriksaan untuk memastikan router telah bertukar informasi routing.
 
@@ -606,6 +571,8 @@ show ip ospf neighbor
 
 Perintah tersebut menampilkan informasi router tetangga yang terhubung melalui OSPF.
 
+![alt](assets/ospf-neighbor.png)
+
 Status `FULL` menunjukkan bahwa proses pertukaran informasi routing antara router telah selesai. Pada jaringan broadcast, status `2WAY` juga dapat muncul di antara router yang sama-sama berstatus DROTHER dan bukan selalu menunjukkan kesalahan konfigurasi.
 
 Selain itu, pemeriksaan tabel routing dilakukan menggunakan perintah:
@@ -616,6 +583,8 @@ show ip route
 
 Pada tabel routing, terdapat beberapa kode yang digunakan untuk menunjukkan sumber informasi jaringan:
 
+![alt text](assets/ip-route.png)
+
 | Kode | Keterangan |
 |---|---|
 | C | Connected, jaringan terhubung langsung. |
@@ -624,45 +593,7 @@ Pada tabel routing, terdapat beberapa kode yang digunakan untuk menunjukkan sumb
 
 Berdasarkan hasil pemeriksaan pada router Cyberia, jaringan internal telah berhasil dipelajari melalui OSPF.
 
-Contoh hasil tabel routing yang diperoleh pada Cyberia:
-
-```text
-O 10.76.0.0/22 via 10.76.16.58
-O 10.76.4.0/22 via 10.76.16.58
-O 10.76.8.0/23 via 10.76.16.58
-O 10.76.10.0/23 via 10.76.16.58
-O 10.76.12.0/24 via 10.76.16.58
-O 10.76.13.0/24 via 10.76.16.58
-C 10.76.14.0/25 is directly connected
-O 10.76.14.128/25 via 10.76.16.58
-O 10.76.15.0/26 via 10.76.16.58
-O 10.76.15.64/26 via 10.76.16.58
-O 10.76.15.128/26 via 10.76.16.58
-O 10.76.15.192/26 via 10.76.16.58
-O 10.76.16.0/27 via 10.76.16.58
-O 10.76.16.32/29 via 10.76.16.58
-O 10.76.16.40/29 via 10.76.16.58
-O 10.76.16.48/29 via 10.76.16.58
-C 10.76.16.56/30 is directly connected
-O 10.76.16.60/30 via 10.76.16.58
-O 10.76.16.64/30 via 10.76.16.58
-O 10.76.16.68/30 via 10.76.16.58
-O 10.76.16.72/30 via 10.76.16.58
-O 10.76.16.76/30 via 10.76.16.58
-O 10.76.16.80/30 via 10.76.16.58
-O 10.76.16.84/30 via 10.76.16.58
-O 10.76.16.88/30 via 10.76.16.58
-```
-
-Keterangan:
-- Jaringan A1 dan A2 ditampilkan sebagai connected karena terhubung langsung ke Cyberia.
-- Jaringan lainnya dipelajari melalui OSPF.
-- Alamat `10.76.16.58` merupakan next hop menuju router Wired.
-- Seluruh jaringan internal yang dialokasikan pada tabel VLSM telah muncul dalam tabel routing Cyberia.
-
-Hasil tersebut menunjukkan bahwa informasi jaringan internal telah tersebar melalui routing OSPF.
-
-## 3.6 Pengujian Konektivitas Jaringan
+## Pengujian Konektivitas Jaringan
 
 Setelah konfigurasi IP dan routing selesai, dilakukan pengujian untuk memastikan perangkat dapat saling berkomunikasi.
 
@@ -683,79 +614,15 @@ ping 10.76.0.2
 
 Hasil pengujian:
 
-```text
-C:\>ping 10.76.0.2
-
-Pinging 10.76.0.2 with 32 bytes of data:
-
-Reply from 10.76.0.2: bytes=32 time<1ms TTL=125
-Reply from 10.76.0.2: bytes=32 time<1ms TTL=125
-Reply from 10.76.0.2: bytes=32 time<1ms TTL=125
-Reply from 10.76.0.2: bytes=32 time<1ms TTL=125
-
-Ping statistics for 10.76.0.2:
-
-Packets: Sent = 4, Received = 4, Lost = 0 (0% loss),
-
-Approximate round trip times in milli-seconds:
-
-Minimum = 0ms, Maximum = 0ms, Average = 0ms
-```
+![alt text](assets/uji-ping-jj.png)
 
 Berdasarkan hasil pengujian, seluruh paket berhasil dikirim dan diterima tanpa kehilangan paket. Hal ini menunjukkan bahwa PC JJ dapat berkomunikasi dengan perangkat Karl meskipun berada pada subnet yang berbeda.
 
 Pengujian ini membuktikan bahwa konfigurasi alamat IP, default gateway, dan routing antarjaringan telah berjalan untuk jalur komunikasi yang diuji.
 
-## 3.7 Konfigurasi dan Status Koneksi Cloud
+Pengujian menggunakan Simple PDU Realtime
 
-Sesuai ketentuan soal, router Cyberia merupakan satu-satunya router yang terhubung ke NAT/Cloud. Oleh karena itu, Cloud-PT ditempatkan pada topologi dan dihubungkan ke interface FastEthernet0/0 pada router Cyberia melalui port Ethernet6 pada Cloud-PT.
-
-Pada tahap konfigurasi, dilakukan pemeriksaan terhadap port Cloud-PT melalui menu Config. Port Ethernet6 tersedia, tetapi status koneksinya masih menunjukkan `Down`.
-
-Pemetaan koneksi melalui menu Cable juga telah dicoba. Namun, pemetaan tersebut belum berhasil mengaktifkan koneksi antara Cloud-PT dan Cyberia.
-
-Dengan demikian, koneksi internal melalui OSPF telah berhasil diuji, sedangkan koneksi eksternal melalui Cloud/NAT belum dapat dinyatakan berhasil. Pengujian akses ke jaringan eksternal belum menjadi hasil yang dapat dilaporkan pada tahap ini.
-
-## 3.8 Dokumentasi Hasil Praktikum
-
-Dokumentasi dilakukan sebagai bukti proses pengerjaan dan hasil implementasi jaringan pada Cisco Packet Tracer.
-
-Dokumentasi yang perlu dilampirkan dalam laporan meliputi:
-
-| No. | Dokumentasi | Keterangan |
-|---|---|---|
-| 1 | Tabel perhitungan VLSM | Menunjukkan pembagian subnet berdasarkan kebutuhan host. |
-| 2 | Topologi jaringan keseluruhan | Menunjukkan seluruh router, switch, end device, dan Cloud-PT. |
-| 3 | Konfigurasi interface router | Menunjukkan alamat IP dan subnet mask pada interface router. |
-| 4 | Konfigurasi IP end device | Menunjukkan IP Address, Subnet Mask, dan Default Gateway. |
-| 5 | Hasil `show ip ospf neighbor` | Menunjukkan hubungan adjacency antarrouter. |
-| 6 | Hasil `show ip route` | Menunjukkan jaringan yang dipelajari melalui OSPF. |
-| 7 | Hasil ping JJ menuju Karl | Menunjukkan keberhasilan komunikasi antar-subnet. |
-| 8 | Tampilan koneksi Cloud-PT | Menunjukkan proses koneksi Cyberia ke Cloud-PT. |
-
-Setiap dokumentasi diberi keterangan gambar agar hasil praktikum lebih mudah dipahami.
-
-## 3.9 Analisis Hasil Praktikum
-
-Berdasarkan proses perancangan dan konfigurasi yang telah dilakukan, jaringan berhasil dibangun menggunakan metode VLSM dengan blok alamat 10.76.0.0/19.
-
-Pembagian alamat IP menghasilkan 25 subnet dengan prefix yang berbeda sesuai kebutuhan host. Setiap router diberikan alamat IP pada interface yang terhubung dengan subnet terkait, sedangkan end device diberikan alamat IP dan default gateway sesuai jaringan masing-masing.
-
-Penggunaan OSPF memungkinkan router saling bertukar informasi routing sehingga jaringan yang berbeda dapat saling berkomunikasi. Hal tersebut dibuktikan melalui tabel routing pada Cyberia yang telah menampilkan jaringan internal sebagai connected maupun jaringan yang dipelajari melalui OSPF.
-
-Pengujian ping dari PC JJ menuju Karl juga berhasil dengan empat paket diterima dan tidak terdapat packet loss. Hasil ini menunjukkan bahwa komunikasi antar-subnet telah berjalan pada jalur yang diuji.
-
-Sementara itu, koneksi Cyberia menuju Cloud-PT belum berhasil diaktifkan. Oleh karena itu, pengujian komunikasi ke jaringan eksternal belum dapat dilakukan dan tidak dimasukkan sebagai keberhasilan praktikum.
-
-## 3.10 Kesimpulan
-
-Berdasarkan praktikum yang telah dilakukan, dapat disimpulkan bahwa metode VLSM dapat digunakan untuk membagi satu blok alamat IP menjadi beberapa subnet dengan kapasitas yang disesuaikan terhadap kebutuhan host pada setiap jaringan.
-
-Hasil pembagian subnet kemudian diterapkan pada topologi menggunakan Cisco Packet Tracer dengan 13 router, switch, dan berbagai end device. Konfigurasi alamat IP dilakukan pada interface router dan perangkat akhir sesuai hasil perhitungan.
-
-Protokol OSPF digunakan untuk mendistribusikan informasi routing antarrouter. Berdasarkan pemeriksaan tabel routing dan pengujian ping dari JJ menuju Karl, komunikasi antarjaringan internal berhasil dilakukan tanpa packet loss.
-
-Dengan demikian, implementasi subnetting VLSM dan routing OSPF pada jaringan internal telah berhasil dilakukan. Adapun koneksi menuju Cloud/NAT masih memerlukan konfigurasi dan pengujian lanjutan.
+![alt text](assets/pdu.png)
 
 ## Laporan GNS3-CIDR
 
