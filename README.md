@@ -15,7 +15,7 @@ Laporan ini berisi rincian topologi jaringan serta pembuktian pengujian konektiv
 
 ## 1. Topologi Jaringan (`1_topologi.png`)
 
-![Topologi Jaringan GNS3](1_topologi.png)
+![Topologi Jaringan GNS3](assets/1_topologi.png)
 
 ### Penjelasan Topologi:
 * Jaringan **The Wired** terhubung ke internet/dunia luar secara terpusat melalui **Router Cyberia** yang tersambung ke node **NAT1**.
@@ -29,7 +29,7 @@ Laporan ini berisi rincian topologi jaringan serta pembuktian pengujian konektiv
 
 ## 2. Inisialisasi & Pengujian Subnet Lokal Kari - Lin (`Kari-lin.png`)
 
-![Konfigurasi dan Ping Kari ke Lin](Kari-lin.png)
+![Konfigurasi dan Ping Kari ke Lin](assets/Kari-lin.png)
 
 ### Alur & Analisis:
 1. **Inisialisasi Node:** Script `/root/kari.sh` dijalankan pada node **Kari** untuk menerapkan konfigurasi IP address dan tabel routing otomatis.
@@ -47,7 +47,7 @@ Laporan ini berisi rincian topologi jaringan serta pembuktian pengujian konektiv
 
 ## 3. Pengujian Lintas Subnet: Kari ke Juri (`kari-juri.png`)
 
-![Ping Kari ke Juri](kari-juri.png)
+![Ping Kari ke Juri](assets/kari-juri.png)
 
 ### Alur Perjalanan Paket (Routing Path):
 `Kari (eth0)` $\rightarrow$ `Switch3` $\rightarrow$ `Psyche` $\rightarrow$ `Switch2` $\rightarrow$ `Copland` $\rightarrow$ `Switch4` $\rightarrow$ `Juri (10.76.6.2)`
@@ -61,7 +61,7 @@ Laporan ini berisi rincian topologi jaringan serta pembuktian pengujian konektiv
 
 ## 4. Pengujian Lintas Subnet: Kari ke Akashic (`kari-akashic.png`)
 
-![Ping Kari ke Akashic](kari-akashic.png)
+![Ping Kari ke Akashic](assets/kari-akashic.png)
 
 ### Alur Perjalanan Paket (Routing Path):
 `Kari (eth0)` $\rightarrow$ `Switch3` $\rightarrow$ `Psyche` $\rightarrow$ `Switch2` $\rightarrow$ `Schumann` $\rightarrow$ `Akashic (10.76.12.2)`
@@ -75,7 +75,7 @@ Laporan ini berisi rincian topologi jaringan serta pembuktian pengujian konektiv
 
 ## 5. Pengujian Lintas Subnet: Kari ke Denpa (`kari-denpa.png`)
 
-![Ping Kari ke Denpa](kari-denpa.png)
+![Ping Kari ke Denpa](assets/kari-denpa.png)
 
 ### Alur Perjalanan Paket (Routing Path):
 `Kari (eth0)` $\rightarrow$ `Switch3` $\rightarrow$ `Psyche` $\rightarrow$ `Switch2` $\rightarrow$ `Schumann` $\rightarrow$ `Accela` $\rightarrow$ `Switch5` $\rightarrow$ `Denpa (10.76.8.3)`
@@ -89,7 +89,7 @@ Laporan ini berisi rincian topologi jaringan serta pembuktian pengujian konektiv
 
 ## 6. Pengujian Lintas Subnet: Kari ke Ghost (`kari-ghost.png`)
 
-![Ping Kari ke Ghost](kari-ghost.png)
+![Ping Kari ke Ghost](assets/kari-ghost.png)
 
 ### Alur Perjalanan Paket (Routing Path):
 `Kari (eth0)` $\rightarrow$ `Switch3` $\rightarrow$ `Psyche` $\rightarrow$ `Switch2` $\rightarrow$ `Wired` $\rightarrow$ `Tachibana` $\rightarrow$ `Switch9` $\rightarrow$ `Ghost (10.76.24.3)`
@@ -103,7 +103,7 @@ Laporan ini berisi rincian topologi jaringan serta pembuktian pengujian konektiv
 
 ## 7. Pengujian Lapisan Dalam: Kari ke Semi (`kari-semi.png`)
 
-![Ping Kari ke Semi](kari-semi.png)
+![Ping Kari ke Semi](assets/kari-semi.png)
 
 ### Alur Perjalanan Paket (Routing Path):
 `Kari` $\rightarrow$ `Psyche` $\rightarrow$ `Wired` $\rightarrow$ `Tachibana` $\rightarrow$ `Deus` $\rightarrow$ `Protocol7` $\rightarrow$ `Knights` $\rightarrow$ `Phantoma` $\rightarrow$ `Switch12` $\rightarrow$ `Semi (10.76.28.2)`
@@ -117,7 +117,7 @@ Laporan ini berisi rincian topologi jaringan serta pembuktian pengujian konektiv
 
 ## 8. Pengujian Cabang Navi: Kari ke Alice (`kari-alice.png`)
 
-![Ping Kari ke Alice](kari-alice.png)
+![Ping Kari ke Alice](assets/kari-alice.png)
 
 ### Alur Perjalanan Paket (Routing Path):
 `Kari (eth0)` $\rightarrow$ `Switch3` $\rightarrow$ `Psyche` $\rightarrow$ `Switch2` $\rightarrow$ `Wired` $\rightarrow$ `Navi` $\rightarrow$ `Switch6` $\rightarrow$ `Alice (10.76.18.2)`
@@ -131,6 +131,6 @@ Laporan ini berisi rincian topologi jaringan serta pembuktian pengujian konektiv
 
 ## Kesimpulan Pembuktian
 Berdasarkan seluruh hasil pengujian *ping* dari node **Kari**:
-1. **Konektivitas 100%:** Seluruh paket uji (ICMP) mencapai target tanpa *packet loss* (0% loss) baik pada subnet lokal maupun antar-subnet beda cabang[cite: 1, 2].
-2. **Routing Efisien:** Nilai TTL yang berkurang secara konsisten sesuai dengan jumlah hop router yang dilewati membuktikan tidak adanya *routing loop* dan tabel routing statis/CIDR telah dikonfigurasi dengan tepat[cite: 1, 2].
-3. **Persyaratan Modul Terpenuhi:** Seluruh node dalam topologi terhubung penuh (*full reachability*) sesuai aturan praktikum[cite: 7].
+1. **Konektivitas 100%:** Seluruh paket uji (ICMP) mencapai target tanpa *packet loss* (0% loss) baik pada subnet lokal maupun antar-subnet beda cabang.
+2. **Routing Efisien:** Nilai TTL yang berkurang secara konsisten sesuai dengan jumlah hop router yang dilewati membuktikan tidak adanya *routing loop* dan tabel routing statis/CIDR telah dikonfigurasi dengan tepat.
+3. **Persyaratan Modul Terpenuhi:** Seluruh node dalam topologi terhubung penuh (*full reachability*) sesuai aturan praktikum.
